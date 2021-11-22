@@ -3,6 +3,7 @@
 /node_modules
 /dist
 .dccache
+*.tsbuildinfo
 
 # yarn berry
 .yarn/*
