@@ -1,3 +1,14 @@
 /qr-image-*.tgz
 .*.swp
 /node_modules
+/dist
+.dccache
+
+# yarn berry
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*

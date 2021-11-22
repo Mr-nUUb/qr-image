@@ -2,24 +2,54 @@
   "name": "qr-image",
   "version": "3.2.0",
   "description": "QR Code generator (png, svg, pdf, eps)",
-  "homepage": "https://github.com/alexeyten/qr-image",
-  "keywords": [ "qrcode", "qr code", "qr", "png", "svg", "image" ],
+  "homepage": "https://github.com/Mr-nUUb/qr-image",
+  "keywords": [
+    "qrcode",
+    "qr code",
+    "qr",
+    "png",
+    "svg",
+    "image"
+  ],
   "author": {
-    "name": "Alexey Ten",
-    "url": "http://git.io/alexeyten"
+    "name": "Mr_nUUb",
+    "url": "https://github.com/Mr-nUUb/"
   },
   "license": "MIT",
+  "packageManager": "yarn@3.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexeyten/qr-image.git"
+    "url": "ssh://git@github.com/Mr-nUUb/qr-image.git"
   },
-  "bugs": "https://github.com/alexeyten/qr-image/issues",
-  "main": "./lib/qr.js",
+  "bugs": "https://github.com/Mr-nUUb/qr-image/issues",
+  "main": "./src/qr.ts",
+  "files": [
+    "/dist/**/*",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "main": "./dist/qr.js",
+    "typings": "./dist/qr.d.ts"
+  },
   "scripts": {
+    "build": "run clean && run compile",
+    "clean": "rimraf ./dist ./tsconfig.build.tsbuildinfo",
+    "compile": "tsc -b tsconfig.json --verbose",
+    "prepack": "run build",
     "test": "./tests/test.js"
   },
-  "files": [
-    "lib",
-    "LICENSE"
-  ]
+  "devDependencies": {
+    "@types/node": "^14",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.3.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-tsdoc": "^0.2.14",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  }
 }
