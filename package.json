@@ -16,7 +16,7 @@
     "url": "https://github.com/Mr-nUUb/"
   },
   "license": "MIT",
-  "packageManager": "yarn@3.1.0",
+  "packageManager": "yarn@3.2.0-rc.5",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/Mr-nUUb/qr-image.git"
@@ -37,6 +37,9 @@
     "compile": "tsc -b tsconfig.json --verbose",
     "prepack": "run build",
     "test": "./tests/test.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   },
   "devDependencies": {
     "@types/node": "^14",
