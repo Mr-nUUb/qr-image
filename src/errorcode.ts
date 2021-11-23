@@ -32,7 +32,7 @@ for (let i = 0; i < 255; i++) {
  * @param k - The exponent base.
  * @returns The exponent of `k`.
  */
-function exp(k: number): number {
+function exp(k: number) {
   let r = k
   while (r < 0) r += 255
   while (r > 255) r -= 255
@@ -44,7 +44,7 @@ function exp(k: number): number {
  * @param k - The logarithm base.
  * @returns The logarithm of `k`.
  */
-function log(k: number): number {
+function log(k: number) {
   if (k < 1 || k > 255) {
     throw Error(`Bad log(${k})`)
   }
@@ -56,13 +56,13 @@ function log(k: number): number {
  * @param num - The polynomial degree.
  * @returns The resulting polynomial.
  */
-function generatorPolynomial(num: number): number[] {
+function generatorPolynomial(num: number) {
   if (polynomials[num]) {
     return polynomials[num]
   }
 
   const prev = generatorPolynomial(num - 1)
-  const res = []
+  const res: number[] = []
 
   res[0] = prev[0]
   for (let i = 1; i <= num; i++) {
@@ -78,7 +78,7 @@ function generatorPolynomial(num: number): number[] {
  * @param ecLength - The length of the resulting code.
  * @returns The error correction code for supplied message with specified length.
  */
-export function calculateEc(message: number[], ecLength: number): number[] {
+export function calculateEC(message: number[], ecLength: number) {
   const arr = message.slice()
   const poly = generatorPolynomial(ecLength)
 

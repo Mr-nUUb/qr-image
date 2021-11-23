@@ -1,4 +1,23 @@
-import { EncodedData, Encoding } from './datatypes'
+import { EncodedData } from './types'
+
+/** The encoding determines what data is encoded and how it is encoded. */
+const Encoding = {
+  /** Numeric, only for numbers, 3.3 bits/char. */
+  Numeric: [0, 0, 0, 1],
+  /** Alphanumeric, only 45 valid characters, 5.5 bits/char. */
+  Alphanumeric: [0, 0, 1, 0],
+  /** Binary/Byte, 8 bits/char. */
+  Byte: [0, 1, 0, 0],
+  // currently the following encodings are not supported
+  /*
+  Kanji: [1, 0, 0, 0],
+  StructuredAppend: [0, 0, 1, 1],
+  ECI: [0, 1, 1, 1],
+  FNC1FirstPosition: [0, 1, 0, 1],
+  FNC1SecondPosition: [1, 0, 0, 1],
+  EndOfMessage: [0, 0, 0, 0],
+  */
+}
 
 /**
  * Encodes a character and pushes the results onto an array.
@@ -6,7 +25,7 @@ import { EncodedData, Encoding } from './datatypes'
  * @param size - The size of the charater to encode.
  * @param value - The charater to encode.
  */
-function pushBits(arr: number[], size: number, value: number): void {
+function pushBits(arr: number[], size: number, value: number) {
   for (let bit = 1 << (size - 1); bit; bit >>>= 1) {
     arr.push(bit & value ? 1 : 0)
   }
@@ -20,7 +39,7 @@ function pushBits(arr: number[], size: number, value: number): void {
  * @param bits - The data to work on.
  * @returns The packed data, encoding and length information.
  */
-function getData(encoding: number[], length: number, size: number, bits: number[]): number[] {
+function getData(encoding: number[], length: number, size: number, bits: number[]) {
   const d = encoding.slice()
   pushBits(d, size, length)
   return d.concat(bits)
@@ -31,7 +50,7 @@ function getData(encoding: number[], length: number, size: number, bits: number[
  * @param data - Binary data to encode, 8 bits/character.
  * @returns The encoded data for all versions.
  */
-function encodeByte(data: number[]): EncodedData {
+function encodeByte(data: number[]) {
   const encoding = Encoding.Byte
   const length = data.length
   const bits: number[] = []
@@ -59,7 +78,7 @@ function encodeByte(data: number[]): EncodedData {
  * @param data - Alphanumeric data to encode, valid characters are `0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:`
  * @returns The encoded data for all versions.
  */
-function encodeAlphanumeric(data: string): EncodedData {
+function encodeAlphanumeric(data: string) {
   const charset = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:'
   const encoding = Encoding.Alphanumeric
   const length = data.length
@@ -98,7 +117,7 @@ function encodeAlphanumeric(data: string): EncodedData {
  * @param data - Numeric data to encode.
  * @returns The encoded data for all versions.
  */
-function encodeNumeric(data: string): EncodedData {
+function encodeNumeric(data: string) {
   const encoding = Encoding.Numeric
   const length = data.length
   const bits: number[] = []
@@ -130,10 +149,10 @@ function encodeNumeric(data: string): EncodedData {
  * @param data - The URL to encode.
  * @returns The encoded data for all versions.
  */
-function encodeUrl(data: string): EncodedData {
+function encodeUrl(data: string) {
   // first encode protocol and hostname as alphanumeric to save space (2 chars at once)
   const slash = data.indexOf('/', 8) + 1 || data.length
-  const result = encode(data.slice(0, slash).toUpperCase(), false)
+  const result: EncodedData = encode(data.slice(0, slash).toUpperCase(), false)
 
   if (slash >= data.length) {
     return result
@@ -158,7 +177,7 @@ function encodeUrl(data: string): EncodedData {
  * @param parseUrl - Flag wheter to optimize the resulting data for URLs.
  * @returns The encoded data for all versions.
  */
-export function encode(data: string | number | number[], parseUrl: boolean): EncodedData {
+export function encode(data: string | number | number[], parseUrl: boolean) {
   let str: string
   let buf: number[]
   const t = typeof data

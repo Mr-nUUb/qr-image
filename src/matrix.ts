@@ -1,4 +1,4 @@
-import { EcLevel, QRData } from './datatypes'
+import { ECLevel, Data, Matrix } from './types'
 
 const light = 0x80
 const dark = 0x81
@@ -8,9 +8,9 @@ const dark = 0x81
  * @param version - The version to determine dimensions.
  * @returns A new matrix filled with zeros.
  */
-export function init(version: number): number[][] {
+export function init(version: number) {
   const length = version * 4 + 17
-  const matrix: number[][] = []
+  const matrix: Matrix = []
 
   for (let i = 0; i < length; i++) {
     matrix.push(new Array<number>(length).fill(0))
@@ -22,7 +22,7 @@ export function init(version: number): number[][] {
  * Fills finders into a matrix. Finders are the big squares in the upper left and right and lower left corners.
  * @param matrix - The matrix to work on.
  */
-export function fillFinders(matrix: number[][]): void {
+export function fillFinders(matrix: Matrix) {
   const length = matrix.length
 
   // finders
@@ -51,7 +51,7 @@ export function fillFinders(matrix: number[][]): void {
  * and timing are lines (alternating dark/light) connecting the finders.
  * @param matrix - The matrix to work on.
  */
-export function fillAlignAndTiming(matrix: number[][]): void {
+export function fillAlignAndTiming(matrix: Matrix) {
   const length = matrix.length
 
   // alignment
@@ -97,7 +97,7 @@ export function fillAlignAndTiming(matrix: number[][]): void {
  * Fills format and version areas with zeros.
  * @param matrix - The matrix to work on.
  */
-export function fillStub(matrix: number[][]): void {
+export function fillStub(matrix: Matrix) {
   const length = matrix.length
 
   // format areas
@@ -155,16 +155,16 @@ export const fillFormatAndVersion = (() => {
     versions[v] = result | (v << 12)
   }
 
-  return (matrix: number[][], ecLevel: keyof typeof EcLevel, mask: number) => {
+  return (matrix: Matrix, ecLevel: ECLevel, mask: number) => {
     // remaps L=>1, M=>0, Q=>3, L=>2
-    const ecLevelRemap = [1, 0, 3, 2]
-    const ecl = ecLevelRemap[EcLevel[ecLevel]]
+    const ecLevelRemap: { [key in ECLevel]: number } = { L: 1, M: 0, Q: 3, H: 2 }
+    const ecl = ecLevelRemap[ecLevel]
     const length = matrix.length
     const format = formats[(ecl << 3) | mask]
     const version = versions[(length - 17) / 4]
 
-    const F = (k: number): number => ((format >> k) & 1 ? dark : light)
-    const V = (k: number): number => ((version >> k) & 1 ? dark : light)
+    const F = (k: number) => ((format >> k) & 1 ? dark : light)
+    const V = (k: number) => ((version >> k) & 1 ? dark : light)
 
     // format
     for (let i = 0; i < 8; i++) {
@@ -211,7 +211,7 @@ export const fillData = (() => {
     (i: number, j: number) => (((i * j) % 3) + ((i + j) % 2)) % 2 == 0,
   ]
 
-  return (matrix: number[][], data: QRData, mask: number) => {
+  return (matrix: Matrix, data: Data, mask: number) => {
     const length = matrix.length
     let row = length - 1
     let col = row
@@ -219,7 +219,7 @@ export const fillData = (() => {
     const maskFunction = maskFunctions[mask]
     let len = data.blocks[data.blocks.length - 1].length
 
-    function put(byte: number): void {
+    function put(byte: number) {
       for (let m = light; m; m >>= 1) {
         let pixel = !!(m & byte)
         if (maskFunction(row, col)) pixel = !pixel
@@ -228,7 +228,7 @@ export const fillData = (() => {
       }
     }
 
-    function next(): boolean {
+    function next() {
       do {
         if (col % 2 ^ (col < 6 ? 1 : 0)) {
           if ((dir < 0 && row == 0) || (dir > 0 && row == length - 1)) {
@@ -278,7 +278,7 @@ export const fillData = (() => {
  * @param matrix - The matrix to analyze.
  * @returns The penalty of the matrix.
  */
-export function calculatePenalty(matrix: number[][]): number {
+export function calculatePenalty(matrix: Matrix) {
   const length = matrix.length
   let penalty = 0
 
@@ -333,8 +333,8 @@ export function calculatePenalty(matrix: number[][]): number {
   }
 
   // Rule 3
-  const I = (i: number, j: number, k: number): number => matrix[i][j + k] & 1
-  const J = (i: number, j: number, k: number): number => matrix[i + k][j] & 1
+  const I = (i: number, j: number, k: number) => matrix[i][j + k] & 1
+  const J = (i: number, j: number, k: number) => matrix[i + k][j] & 1
   for (let i = 0; i < length; i++) {
     for (let j = 0; j < length; j++) {
       if (
@@ -392,7 +392,7 @@ export function calculatePenalty(matrix: number[][]): number {
  * @param data - The encoded data to fill into the matrix.
  * @returns A matrix with data, finders, alignment, timing, version and format information.
  */
-export function getMatrix(data: QRData): number[][] {
+export function getMatrix(data: Data) {
   const matrix = init(data.version)
   let penalty = Infinity
   let bestMask = 0

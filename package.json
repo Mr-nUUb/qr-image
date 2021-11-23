@@ -33,7 +33,7 @@
   },
   "scripts": {
     "build": "run clean && run compile",
-    "clean": "rimraf ./dist ./tsconfig.build.tsbuildinfo",
+    "clean": "rimraf ./dist ./tsconfig.tsbuildinfo",
     "compile": "tsc -b tsconfig.json --verbose",
     "prepack": "run build",
     "test": "./tests/test.js"
