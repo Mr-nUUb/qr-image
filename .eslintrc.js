@@ -25,7 +25,7 @@ module.exports = {
     indent: 'off',
     'jsx-quotes': ['error', 'prefer-single'],
     'linebreak-style': ['error', 'unix'],
-    'max-len': ['error', { code: 100, ignoreUrls: true, ignoreComments: true }],
+    'max-len': ['error', { code: 120, ignoreUrls: true, ignoreComments: true }],
     'no-undef': 'error',
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],

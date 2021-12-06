@@ -34,7 +34,7 @@ export type ImageOptions = {
   type: ImageType
 }
 
-export type ImageType = 'png' | 'svg'
+export type ImageType = 'json' | 'png' | 'svg' | 'eps' | 'pdf'
 
 /** The level of the error correction code, determines hogh much data can be restored. */
 export type ECLevel =

@@ -1,7 +1,8 @@
 import { encode } from './encode'
 import { calculateEC } from './errorcode'
 import { getMatrix } from './matrix'
-import { ECLevel, Data, EncodedData } from './types'
+import { getOptions } from './options'
+import { ECLevel, Data, EncodedData, ImageOptions } from './types'
 
 type QRVersionList = { [key in ECLevel]?: Data }
 
@@ -198,9 +199,10 @@ export function fillTemplate(message: EncodedData, template: Data) {
  * @param parseUrl - (experimental) Optimize the resulting QR code for URLs. Text must begin with `https://`
  * @returns A valid QR code as a 2D array.
  */
-export function qr(text: string, ecLevel: ECLevel = 'M', parseUrl = false) {
-  const message = encode(text, parseUrl)
-  const data = fillTemplate(message, getTemplate(message, ecLevel))
+export function getQR(text: string, options: Omit<ImageOptions, 'type'> & Required<Pick<ImageOptions, 'type'>>) {
+  const opt = getOptions(options)
+  const message = encode(text, opt.parseUrl)
+  const data = fillTemplate(message, getTemplate(message, opt.ecLevel))
   const result = getMatrix(data)
   return result
 }
