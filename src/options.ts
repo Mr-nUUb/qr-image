@@ -3,7 +3,7 @@ import { ImageOptions, ImageType } from './types'
 export function getOptions(inOptions: ImageOptions) {
   const type: ImageType = !inOptions || !inOptions.type ? 'png' : inOptions.type
   const defaults = type === 'png' ? bitmapOptions : vectorOptions
-  return { ...defaults, ...inOptions }
+  return { ...defaults, ...inOptions } as Required<ImageOptions>
 }
 
 const commonOptions: Pick<ImageOptions, 'type' | 'parseUrl' | 'ecLevel'> = {

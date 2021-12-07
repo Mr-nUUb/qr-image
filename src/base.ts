@@ -199,7 +199,7 @@ export function fillTemplate(message: EncodedData, template: Data) {
  * @param parseUrl - (experimental) Optimize the resulting QR code for URLs. Text must begin with `https://`
  * @returns A valid QR code as a 2D array.
  */
-export function getQR(text: string, options: Omit<ImageOptions, 'type'> & Required<Pick<ImageOptions, 'type'>>) {
+export function getQR(text: string, options: ImageOptions) {
   const opt = getOptions(options)
   const message = encode(text, opt.parseUrl)
   const data = fillTemplate(message, getTemplate(message, opt.ecLevel))

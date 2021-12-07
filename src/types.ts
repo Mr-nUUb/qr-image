@@ -27,11 +27,11 @@ export type Data = {
 }
 
 export type ImageOptions = {
-  parseUrl: boolean
-  ecLevel: ECLevel
-  size: number
-  margin: number
-  type: ImageType
+  parseUrl?: boolean
+  ecLevel?: ECLevel
+  size?: number
+  margin?: number
+  type?: ImageType
 }
 
 export type ImageType = 'json' | 'png' | 'svg' | 'eps' | 'pdf'

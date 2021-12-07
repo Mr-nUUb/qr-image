@@ -3,7 +3,7 @@ import { getOptions } from './options'
 import { getPath } from './path'
 import { ImageOptions, Matrix } from './types'
 
-export function getSVG(text: string, options: Omit<ImageOptions, 'type'> & Required<Pick<ImageOptions, 'type'>>) {
+export function getSVG(text: string, options: ImageOptions) {
   const opt = getOptions(options)
   const matrix = getQR(text, opt)
   const X = matrix.length + 2 * opt.margin
