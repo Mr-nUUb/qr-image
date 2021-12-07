@@ -9,6 +9,8 @@
     "qr",
     "png",
     "svg",
+    "eps",
+    "pdf",
     "image"
   ],
   "author": {
@@ -22,15 +24,20 @@
     "url": "ssh://git@github.com/Mr-nUUb/qr-image.git"
   },
   "bugs": "https://github.com/Mr-nUUb/qr-image/issues",
-  "main": "./src/qr.ts",
+  "type": "commonjs",
+  "main": "./dist/main.js",
+  "typings": "./dist/main.d.ts",
+  "exports": {
+    ".": "./dist/main.js",
+    "./eps": "./dist/eps.js",
+    "./pdf": "./dist/pdf.js",
+    "./png": "./dist/png.js",
+    "./svg": "./dist/svg.js"
+  },
   "files": [
     "/dist/**/*",
     "LICENSE"
   ],
-  "publishConfig": {
-    "main": "./dist/qr.js",
-    "typings": "./dist/qr.d.ts"
-  },
   "scripts": {
     "build": "run clean && run compile",
     "clean": "rimraf ./dist ./tsconfig.tsbuildinfo",
