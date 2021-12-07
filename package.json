@@ -29,6 +29,7 @@
   "typings": "./dist/main.d.ts",
   "exports": {
     ".": "./dist/main.js",
+    "./base": "./dist/base.js",
     "./eps": "./dist/eps.js",
     "./pdf": "./dist/pdf.js",
     "./png": "./dist/png.js",
@@ -36,6 +37,7 @@
   },
   "files": [
     "/dist/**/*",
+    "/examples/**/*",
     "LICENSE"
   ],
   "scripts": {
