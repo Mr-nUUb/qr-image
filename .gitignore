@@ -5,6 +5,10 @@
 .dccache
 *.tsbuildinfo
 
+# examples
+/examples/formats/output
+/examples/react/build
+
 # yarn berry
 .yarn/*
 !.yarn/patches

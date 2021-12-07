@@ -4,14 +4,14 @@
 const fs = require('fs')
 const path = require('path')
 
-const homepage = require('../package.json').homepage
+const homepage = require('../../package.json').homepage
 
-const qr = require('../dist/main')
-const getQR = require('../dist/base').getQR
-const getEPS = require('../dist/eps').getEPS
-const getPDF = require('../dist/pdf').getPDF
-const getPNG = require('../dist/png').getPNG
-const getSVG = require('../dist/svg').getSVG
+const qr = require('../../dist/main')
+const getQR = require('../../dist/base').getQR
+const getEPS = require('../../dist/eps').getEPS
+const getPDF = require('../../dist/pdf').getPDF
+const getPNG = require('../../dist/png').getPNG
+const getSVG = require('../../dist/svg').getSVG
 
 const outputPath = path.resolve(__dirname, 'output')
 

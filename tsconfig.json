@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["es2020"],
+    "lib": ["es2020", "DOM"],
     "module": "commonjs",
     "target": "es2020",
     "esModuleInterop": true,
@@ -11,6 +11,7 @@
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "jsx": "react",
     "rootDir": "./src",
     "outDir": "./dist",
     "types": ["node"]
