@@ -45,7 +45,7 @@
     "clean": "rimraf ./dist ./tsconfig.tsbuildinfo",
     "compile": "tsc -b tsconfig.json --verbose",
     "prepack": "run build",
-    "test": "./tests/test.js",
+    "test": "jest --runInBand",
     "example:formats:js": "node examples/formats/formats.js",
     "example:formats:ts": "ts-node examples/formats/formats.ts",
     "example:react:js": "webpack serve -c examples/react/webpack.config.js",
@@ -71,6 +71,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-tsdoc": "^0.2.14",
     "html-webpack-plugin": "^5.5.0",
@@ -86,5 +87,10 @@
   },
   "peerDependencies": {
     "react": "^16.0.0 || ^17.0.0"
+  },
+  "dependencies": {
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.4",
+    "ts-jest": "^27.1.1"
   }
 }

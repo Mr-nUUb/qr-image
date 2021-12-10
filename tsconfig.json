@@ -15,7 +15,7 @@
     "jsx": "react",
     "rootDir": "./src",
     "outDir": "./dist",
-    "types": ["node"]
+    "types": ["node", "jest"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

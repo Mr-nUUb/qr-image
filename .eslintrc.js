@@ -4,19 +4,15 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
+    'jest/globals': true,
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-    'prettier',
-  ],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
   },
-  plugins: ['import', '@typescript-eslint', 'tsdoc', 'prettier'],
+  plugins: ['import', '@typescript-eslint', 'tsdoc', 'prettier', 'jest'],
   rules: {
     '@typescript-eslint/no-shadow': 'error',
     'arrow-body-style': ['error', 'as-needed'],

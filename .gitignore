@@ -5,6 +5,7 @@
 .dccache
 *.tsbuildinfo
 package.tgz
+coverage
 
 # examples
 /examples/formats/output
