@@ -9,7 +9,7 @@ const PNG_IHDR = Buffer.from([0, 0, 0, 13, 73, 72, 68, 82, 0, 0, 0, 0, 0, 0, 0, 
 const PNG_IDAT = Buffer.from([0, 0, 0, 0, 73, 68, 65, 84])
 const PNG_IEND = Buffer.from([0, 0, 0, 0, 73, 69, 78, 68, 174, 66, 96, 130])
 
-export function getPNG(text: string, options: ImageOptions) {
+export function getPNG(text: string, options?: ImageOptions) {
   const opt = getOptions(options)
   const matrix = getQR(text, opt)
   const N = matrix.length

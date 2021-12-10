@@ -1,6 +1,6 @@
 import { ImageOptions, ImageType } from './types'
 
-export function getOptions(inOptions: ImageOptions) {
+export function getOptions(inOptions?: ImageOptions) {
   const type: ImageType = !inOptions || !inOptions.type ? 'png' : inOptions.type
   const defaults = type === 'png' ? bitmapOptions : vectorOptions
   return { ...defaults, ...inOptions } as Required<ImageOptions>

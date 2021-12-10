@@ -3,7 +3,7 @@ import { getOptions } from './options'
 import { getPath } from './path'
 import { ImageOptions } from './types'
 
-export function getEPS(text: string, options: ImageOptions) {
+export function getEPS(text: string, options?: ImageOptions) {
   const scale = 9
   const opt = getOptions(options)
   const matrix = getQR(text, opt)
