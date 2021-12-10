@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { QRImage } from 'qr-image/react'
+import { QRImage } from '@mr-nuub/qr-image/react'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const homepage = require('../../../package.json').homepage

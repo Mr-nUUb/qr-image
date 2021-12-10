@@ -1,5 +1,5 @@
 {
-  "name": "qr-image",
+  "name": "@mr-nuub/qr-image",
   "version": "3.2.0",
   "description": "QR Code generator (png, svg, pdf, eps)",
   "homepage": "https://github.com/Mr-nUUb/qr-image",
@@ -36,6 +36,7 @@
   },
   "exports": {
     ".": "./dist/main.js",
+    "./main": "./dist/main.js",
     "./base": "./dist/base.js",
     "./eps": "./dist/eps.js",
     "./pdf": "./dist/pdf.js",
