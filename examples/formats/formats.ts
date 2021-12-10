@@ -1,13 +1,7 @@
 import { existsSync, mkdirSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
 
-import { getQRImage } from '@mr-nuub/qr-image/main'
-import { getQR } from '@mr-nuub/qr-image/base'
-import { getEPS } from '@mr-nuub/qr-image/eps'
-import { getPDF } from '@mr-nuub/qr-image/pdf'
-import { getPNG } from '@mr-nuub/qr-image/png'
-import { getSVG } from '@mr-nuub/qr-image/svg'
-
+import { getEPS, getPDF, getPNG, getQR, getQRImage, getSVG } from '@mr-nuub/qr-image'
 import { homepage } from '../../package.json'
 
 const outputPath = resolve(__dirname, 'output')

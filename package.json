@@ -27,16 +27,8 @@
   "type": "commonjs",
   "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*"
-      ]
-    }
-  },
   "exports": {
     ".": "./dist/main.js",
-    "./main": "./dist/main.js",
     "./base": "./dist/base.js",
     "./eps": "./dist/eps.js",
     "./pdf": "./dist/pdf.js",

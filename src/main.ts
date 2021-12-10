@@ -4,6 +4,9 @@ import { getPDF } from './pdf'
 import { getPNG } from './png'
 import { getSVG } from './svg'
 import { ImageOptions } from './types'
+import { QRImage } from './react'
+
+export { getQR, getEPS, getPDF, getPNG, getSVG, ImageOptions, QRImage }
 
 export function getQRImage(text: string, options: Omit<ImageOptions, 'type'> & Required<Pick<ImageOptions, 'type'>>) {
   switch (options.type) {
