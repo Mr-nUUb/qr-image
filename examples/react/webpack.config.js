@@ -9,7 +9,7 @@ function resolveExample(p) {
 }
 
 module.exports = {
-  entry: resolveExample('src/example.js'),
+  entry: resolveExample(`src/example.${process.env.EXAMPLE === 'tsx' ? 'tsx' : 'jsx'}`),
   output: {
     filename: 'entry.js',
     path: resolveExample('build'),
@@ -17,7 +17,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
@@ -29,6 +29,7 @@ module.exports = {
               },
             ],
             '@babel/preset-react',
+            '@babel/preset-typescript',
           ],
           plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-proposal-optional-chaining'],
         },

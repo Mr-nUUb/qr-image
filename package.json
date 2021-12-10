@@ -26,7 +26,14 @@
   "bugs": "https://github.com/Mr-nUUb/qr-image/issues",
   "type": "commonjs",
   "main": "./dist/main.js",
-  "typings": "./dist/main.d.ts",
+  "types": "./dist/main.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*"
+      ]
+    }
+  },
   "exports": {
     ".": "./dist/main.js",
     "./base": "./dist/base.js",
@@ -48,7 +55,8 @@
     "test": "./tests/test.js",
     "example:formats:js": "node examples/formats/formats.js",
     "example:formats:ts": "ts-node examples/formats/formats.ts",
-    "example:react": "webpack serve -c examples/react/webpack.config.js"
+    "example:react:js": "webpack serve -c examples/react/webpack.config.js",
+    "example:react:ts": "EXAMPLE=tsx webpack serve -c examples/react/webpack.config.js"
   },
   "engines": {
     "node": ">=14.0.0"
@@ -59,8 +67,10 @@
     "@babel/plugin-proposal-optional-chaining": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
     "@types/node": "^14",
     "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "babel-loader": "^8.2.3",
