@@ -45,8 +45,5 @@ module.exports = {
   mode: 'development',
   devServer: {
     open: true,
-    static: {
-      directory: resolveExample('public'),
-    },
   },
 }
