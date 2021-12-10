@@ -26,11 +26,8 @@ export function getPDF(text: string, options?: ImageOptions) {
         const item = subpath[k]
         switch (item[0]) {
           case 'M':
-            // item[0] === 'M' implies item[2] is number
-            // this line is here to stop TS from complaining
-            if (item[2] === undefined) break
             x = item[1] + opt.margin
-            y = matrix.length - item[2] + opt.margin
+            y = matrix.length - (item[2] || 0) + opt.margin
             res += `${x} ${y} m `
             break
           case 'h':

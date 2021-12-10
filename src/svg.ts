@@ -29,10 +29,7 @@ export function getSVGPath(matrix: Matrix, margin: number) {
       const item = subpath[k]
       switch (item[0]) {
         case 'M':
-          // item[0] === 'M' implies item[2] is number
-          // this line is here to stop TS from complaining
-          if (item[2] === undefined) break
-          path += `M${item[1] + margin} ${item[2] + margin}`
+          path += `M${item[1] + margin} ${(item[2] || 0) + margin}`
           break
         default:
           path += item.join('')
