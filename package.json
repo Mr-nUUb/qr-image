@@ -33,7 +33,8 @@
     "./eps": "./dist/eps.js",
     "./pdf": "./dist/pdf.js",
     "./png": "./dist/png.js",
-    "./svg": "./dist/svg.js"
+    "./svg": "./dist/svg.js",
+    "./react": "./dist/react.js"
   },
   "files": [
     "/dist/**/*",
@@ -45,7 +46,8 @@
     "compile": "tsc -b tsconfig.json --verbose",
     "prepack": "run build",
     "test": "./tests/test.js",
-    "example:formats": "node examples/formats/formats.js",
+    "example:formats:js": "node examples/formats/formats.js",
+    "example:formats:ts": "ts-node examples/formats/formats.ts",
     "example:react": "webpack serve -c examples/react/webpack.config.js"
   },
   "engines": {
@@ -73,6 +75,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
     "typescript": "^4.5.2",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1",
