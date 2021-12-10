@@ -4,6 +4,7 @@
 /dist
 .dccache
 *.tsbuildinfo
+package.tgz
 
 # examples
 /examples/formats/output
