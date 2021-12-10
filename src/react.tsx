@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { getQR } from './base'
 import { getSVGPath } from './svg'
 import { ECLevel } from './types'
@@ -51,5 +51,3 @@ export const QRImage = ({
     <canvas ref={canvasRef} className={className} height={size} style={{ height: size, width: size }} width={size} />
   )
 }
-
-module.exports = QRImage

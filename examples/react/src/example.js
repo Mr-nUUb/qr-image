@@ -3,7 +3,7 @@
 
 const React = require('react')
 const ReactDOM = require('react-dom')
-const QRImage = require('../../../dist/react')
+const QRImage = require('../../../dist/react').QRImage
 
 const homepage = require('../../../package.json').homepage
 

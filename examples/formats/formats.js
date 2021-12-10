@@ -6,7 +6,7 @@ const path = require('path')
 
 const homepage = require('../../package.json').homepage
 
-const qr = require('../../dist/main')
+const getQRImage = require('../../dist/main').getQRImage
 const getQR = require('../../dist/base').getQR
 const getEPS = require('../../dist/eps').getEPS
 const getPDF = require('../../dist/pdf').getPDF
@@ -20,7 +20,7 @@ if (!fs.existsSync(outputPath)) fs.mkdirSync(outputPath)
 // select output format and customize EC level, margin and size
 fs.writeFileSync(
   path.resolve(outputPath, 'homepage.custom.png'),
-  qr.getQRImage(homepage, { type: 'png', ecLevel: 'H', margin: 1, size: 9 }),
+  getQRImage(homepage, { type: 'png', ecLevel: 'H', margin: 1, size: 9 }),
 )
 
 // other supported formats
