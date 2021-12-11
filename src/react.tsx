@@ -48,6 +48,13 @@ export const QRImage = ({
   }, [bgColor, fgColor, ecLevel, margin, size, value])
 
   return (
-    <canvas ref={canvasRef} className={className} height={size} style={{ height: size, width: size }} width={size} />
+    <canvas
+      ref={canvasRef}
+      className={className}
+      height={size}
+      style={{ height: size, width: size }}
+      width={size}
+      data-testid='QRImage'
+    />
   )
 }
