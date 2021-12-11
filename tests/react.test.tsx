@@ -1,8 +1,10 @@
 /**
  * @jest-environment jsdom
  */
+
 import 'jest-canvas-mock'
 import 'path2d-polyfill'
+
 import React from 'react'
 import { render } from '@testing-library/react'
 import { QRImage } from '../src/react'
