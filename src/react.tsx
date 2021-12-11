@@ -34,7 +34,7 @@ export const QRImage = ({
 
     const qrMatrix = getQR(value, { ecLevel })
     const numModules = qrMatrix.length + margin * 2
-    const pixelRatio = window.devicePixelRatio || 1
+    const pixelRatio = window.devicePixelRatio
     const scale = (size / numModules) * pixelRatio
 
     canvas.height = canvas.width = size * pixelRatio
