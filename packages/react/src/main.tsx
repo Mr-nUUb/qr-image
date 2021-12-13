@@ -1,7 +1,5 @@
 import React from 'react'
-import { getQR } from './base'
-import { getSVGPath } from './svg'
-import { ECLevel } from './types'
+import { ECLevel, getQR, getSVGPath } from '@qr-image/lib'
 
 type Props = {
   value: string

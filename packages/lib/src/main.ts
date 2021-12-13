@@ -2,11 +2,10 @@ import { getQR } from './base'
 import { getEPS } from './eps'
 import { getPDF } from './pdf'
 import { getPNG } from './png'
-import { getSVG } from './svg'
-import { ImageOptions } from './types'
-import { QRImage } from './react'
+import { getSVG, getSVGPath } from './svg'
+import { ECLevel, ImageOptions } from './types'
 
-export { getQR, getEPS, getPDF, getPNG, getSVG, ImageOptions, QRImage }
+export { getQR, getEPS, getPDF, getPNG, getSVG, getSVGPath, ImageOptions, ECLevel }
 
 export function getQRImage(text: string, options: Omit<ImageOptions, 'type'> & Required<Pick<ImageOptions, 'type'>>) {
   switch (options.type) {

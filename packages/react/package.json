@@ -1,0 +1,60 @@
+{
+  "name": "@qr-image/react",
+  "version": "0.0.0",
+  "description": "QR Code generator (react component)",
+  "homepage": "https://github.com/Mr-nUUb/qr-image",
+  "keywords": [
+    "qrcode",
+    "qr code",
+    "qr",
+    "react"
+  ],
+  "author": {
+    "name": "Mr_nUUb",
+    "url": "https://github.com/Mr-nUUb/"
+  },
+  "license": "MIT",
+  "packageManager": "yarn@3.2.0-rc.8",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/Mr-nUUb/qr-image.git"
+  },
+  "bugs": "https://github.com/Mr-nUUb/qr-image/issues",
+  "type": "commonjs",
+  "main": "./src/main.tsx",
+  "publishConfig": {
+    "main": "./dist/main.js",
+    "types": "./dist/main.d.ts"
+  },
+  "files": [
+    "/dist/**/*",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.json --verbose",
+    "clean": "rimraf ./dist ./tsconfig.tsbuildinfo",
+    "update": "run build",
+    "prepack": "run build",
+    "postpack": "run clean",
+    "example": "webpack serve -c example/webpack.config.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "@qr-image/lib": "workspace:^",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.3",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "jest-canvas-mock": "^2.3.1",
+    "path2d-polyfill": "^1.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0"
+  }
+}

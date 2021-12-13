@@ -12,11 +12,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noUnusedLocals": true,
-    "jsx": "react",
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "types": ["node", "jest"]
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+    "jsx": "react"
+  }
 }

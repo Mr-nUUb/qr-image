@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "types": ["jest"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
+  "references": [{ "path": "../lib/tsconfig.json" }]
+}

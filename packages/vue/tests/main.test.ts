@@ -1,12 +1,11 @@
 /**
  * @jest-environment jsdom
  */
-
 import 'jest-canvas-mock'
 import 'path2d-polyfill'
 
 import { getByTestId, render } from '@testing-library/vue'
-import QRImage from '../src/vue'
+import QRImage from '../src/main'
 
 const text = 'I ❤️ @mr-nuub/qr-image'
 

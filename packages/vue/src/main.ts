@@ -1,7 +1,5 @@
 import { defineComponent, h, onMounted, onUpdated, PropType, ref } from 'vue'
-import { getQR } from './base'
-import { getSVGPath } from './svg'
-import { ECLevel } from './types'
+import { ECLevel, getQR, getSVGPath } from '@qr-image/lib'
 
 const Props = {
   value: {

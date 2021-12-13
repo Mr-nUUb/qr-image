@@ -5,11 +5,8 @@
 .dccache
 *.tsbuildinfo
 package.tgz
-coverage
-
-# examples
-/examples/formats/output
-/examples/react/build
+/coverage
+/packages/**/dist
 
 # yarn berry
 .yarn/*

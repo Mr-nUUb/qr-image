@@ -4,6 +4,5 @@ module.exports = {
   testEnvironment: 'node',
   collectCoverage: true,
   coverageDirectory: 'coverage',
-  roots: ['./tests'],
-  setupFiles: ['jest-canvas-mock'],
+  roots: ['<rootDir>/packages/lib', '<rootDir>/packages/react', '<rootDir>/packages/vue'],
 }

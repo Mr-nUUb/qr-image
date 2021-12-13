@@ -7,7 +7,7 @@ import 'path2d-polyfill'
 
 import React from 'react'
 import { getByTestId, render } from '@testing-library/react'
-import { QRImage } from '../src/react'
+import { QRImage } from '../src/main'
 
 const text = 'I ❤️ @mr-nuub/qr-image'
 
