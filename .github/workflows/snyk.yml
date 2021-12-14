@@ -21,7 +21,7 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --dev --sarif-file-output=snyk.sarif
+          args: --yarn-workspaces --dev --sarif-file-output=snyk.sarif
       - name: Snyk Monitor
         uses: snyk/actions@0.3.0
         continue-on-error: true
@@ -29,7 +29,7 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           command: monitor
-          args: --dev 
+          args: --yarn-workspaces --dev
       - name: Upload result
         uses: github/codeql-action/upload-sarif@v1
         with:
