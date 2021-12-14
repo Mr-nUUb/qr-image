@@ -804,6 +804,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qr-image/monorepo@workspace:."
   dependencies:
+    "@babel/types": ^7.16.0
     "@types/jest": ^27.0.3
     "@typescript-eslint/eslint-plugin": ^5.4.0
     "@typescript-eslint/parser": ^5.4.0
@@ -851,9 +852,6 @@ __metadata:
     "@qr-image/lib": "workspace:^"
     "@testing-library/vue": ^6.5.0
     "@types/jest": ^27.0.3
-    "@vue/compiler-core": ^3.2.24
-    "@vue/compiler-dom": ^3.2.24
-    "@vue/compiler-sfc": ^3.2.24
     jest-canvas-mock: ^2.3.1
     path2d-polyfill: ^1.2.0
     rimraf: ^3.0.2
@@ -1269,7 +1267,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/compiler-core@npm:3.2.26, @vue/compiler-core@npm:^3.2.24":
+"@vue/compiler-core@npm:3.2.26":
   version: 3.2.26
   resolution: "@vue/compiler-core@npm:3.2.26"
   dependencies:
@@ -1291,7 +1289,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/compiler-sfc@npm:3.2.26, @vue/compiler-sfc@npm:^3.2.24":
+"@vue/compiler-sfc@npm:3.2.26":
   version: 3.2.26
   resolution: "@vue/compiler-sfc@npm:3.2.26"
   dependencies:
