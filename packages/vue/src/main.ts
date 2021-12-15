@@ -37,11 +37,13 @@ const QRImage = defineComponent({
     const canvasRef = ref<HTMLCanvasElement | null>(null)
 
     const encode = () => {
+      /* istanbul ignore next */
       if (!canvasRef.value) return
 
       const canvas = canvasRef.value
       const ctx = canvas.getContext('2d')
 
+      /* istanbul ignore next */
       if (!ctx) return
 
       const qrMatrix = getQR(value, { ecLevel })

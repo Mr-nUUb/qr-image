@@ -23,11 +23,13 @@ export const QRImage = ({
   const canvasRef = React.useRef<HTMLCanvasElement>(null)
 
   React.useEffect(() => {
+    /* istanbul ignore next */
     if (!canvasRef.current) return
 
     const canvas = canvasRef.current
     const ctx = canvas.getContext('2d')
 
+    /* istanbul ignore next */
     if (!ctx) return
 
     const qrMatrix = getQR(value, { ecLevel })
