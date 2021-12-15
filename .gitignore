@@ -6,7 +6,10 @@
 *.tsbuildinfo
 package.tgz
 /coverage
-/packages/**/dist
+/packages/**/commonjs
+/packages/**/browser
+/packages/**/module
+/packages/**/types
 
 # yarn berry
 .yarn/*

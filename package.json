@@ -19,12 +19,29 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "build": "yarn workspaces foreach -ptv run build",
-    "clean": "yarn workspaces foreach -ptv run clean",
-    "test": "jest --runInBand"
+    "build": "run build-commonjs && run build-module && run build-browser && run build-types",
+    "build-commonjs": "BABEL_ENV=development node scripts/build.js",
+    "build-module": "BABEL_ENV=module node scripts/build.js",
+    "build-browser": "BABEL_ENV=browser node scripts/build.js",
+    "build-types": "yarn workspaces foreach --no-private -ptv run tsc",
+    "clean": "run clean-commonjs && run clean-module && run clean-browser && run clean-types ",
+    "clean-commonjs": "rimraf 'packages/*/commonjs'",
+    "clean-module": "rimraf 'packages/*/module'",
+    "clean-browser": "rimraf 'packages/*/browser'",
+    "clean-types": "rimraf 'packages/*/{types,tsconfig.tsbuildinfo}'",
+    "test": "jest --runInBand",
+    "publish": "run clean && run build && yarn workspaces foreach --no-private -ptv npm publish --access public && run clean"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-proposal-class-properties": "^7.16.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
     "@babel/types": "^7.16.0",
+    "@types/glob": "^7",
     "@types/jest": "^27.0.3",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
@@ -36,10 +53,10 @@
     "eslint-plugin-jest": "^25.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-tsdoc": "^0.2.14",
+    "glob": "^7.2.0",
     "jest": "^27.4.4",
-    "jest-canvas-mock": "^2.3.1",
-    "path2d-polyfill": "^1.2.0",
     "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
     "ts-jest": "^27.1.1",
     "typescript": "^4.5.2"
   }

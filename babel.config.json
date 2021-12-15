@@ -1,0 +1,50 @@
+{
+  "env": {
+    "development": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "12"
+            }
+          }
+        ],
+        "@babel/preset-react",
+        "@babel/preset-typescript"
+      ],
+      "plugins": []
+    },
+    "browser": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": "defaults"
+          }
+        ],
+        "@babel/preset-react",
+        "@babel/preset-typescript"
+      ],
+      "plugins": ["@babel/plugin-proposal-class-properties", "@babel/plugin-proposal-optional-chaining"]
+    },
+    "module": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "14"
+            },
+            "modules": false
+          }
+        ],
+        "@babel/preset-react",
+        "@babel/preset-typescript"
+      ],
+      "plugins": []
+    }
+  },
+  "comments": false,
+  "sourceMaps": "both"
+}

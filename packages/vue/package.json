@@ -1,6 +1,6 @@
 {
   "name": "@qr-image/vue",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "QR Code generator (vue component)",
   "homepage": "https://github.com/Mr-nUUb/qr-image",
   "keywords": [
@@ -20,32 +20,29 @@
     "url": "ssh://git@github.com/Mr-nUUb/qr-image.git"
   },
   "bugs": "https://github.com/Mr-nUUb/qr-image/issues",
-  "type": "commonjs",
-  "main": "./dist/main.ts",
+  "main": "./src/main.ts",
   "publishConfig": {
-    "main": "./dist/main.js",
-    "types": "./dist/main.d.ts"
+    "main": "./commonjs/main.js",
+    "module": "./module/main.js",
+    "browser": "./browser/main.js",
+    "types": "./types/main.d.ts"
   },
   "files": [
-    "/dist/**/*",
+    "/commonjs/**/*",
+    "/module/**/*",
+    "/browser/**/*",
+    "/types/main.d.ts",
     "LICENSE"
   ],
-  "scripts": {
-    "build": "tsc -b tsconfig.json --verbose",
-    "clean": "rimraf ./dist ./tsconfig.tsbuildinfo",
-    "update": "run build",
-    "prepack": "run build",
-    "postpack": "run clean"
-  },
   "engines": {
     "node": ">=14.0.0"
   },
   "devDependencies": {
     "@testing-library/vue": "^6.5.0",
     "@types/jest": "^27.0.3",
+    "@vue/compiler-sfc": "^3.2.24",
     "jest-canvas-mock": "^2.3.1",
     "path2d-polyfill": "^1.2.0",
-    "rimraf": "^3.0.2",
     "typescript": "^4.5.2",
     "vue": "^3.2.24"
   },
