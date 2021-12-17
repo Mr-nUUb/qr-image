@@ -9,16 +9,14 @@ const root = resolve(__dirname, '..')
 const { workspaces } = require(`${root}/package.json`)
 
 const source = 'src/**/*.{ts,tsx}'
-const destination = {
-  browser: 'browser',
-  module: 'module',
-  development: 'commonjs', // node
+const endings = {
+  browser: 'mjs',
+  development: 'cjs', // node
 }
-const destEnding = 'js'
 
 const babelEnv = process.env.BABEL_ENV || 'development'
 
-if (!Object.keys(destination).includes(babelEnv)) {
+if (!Object.keys(endings).includes(babelEnv)) {
   console.error(`Unknown babel env: ${babelEnv}`)
   return
 }
@@ -34,7 +32,7 @@ workspaces.forEach((workspace) => {
     }
 
     matches.forEach((pkg) => {
-      const dest = `${pkg}/${destination[babelEnv]}`
+      const dest = `${pkg}/dist`
       mkdirSync(dest, { recursive: true })
       glob(`${pkg}/${source}`, (sourceError, files) => {
         if (sourceError) {
@@ -50,7 +48,7 @@ workspaces.forEach((workspace) => {
             }
 
             const fileParts = basename(file).split('.')
-            fileParts[fileParts.length - 1] = destEnding
+            fileParts[fileParts.length - 1] = endings[babelEnv]
             const fileName = fileParts.join('.')
 
             writeFileSync(`${dest}/${fileName}`, result.code)

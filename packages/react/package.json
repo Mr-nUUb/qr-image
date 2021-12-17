@@ -20,18 +20,15 @@
     "url": "ssh://git@github.com/Mr-nUUb/qr-image.git"
   },
   "bugs": "https://github.com/Mr-nUUb/qr-image/issues",
+  "type": "module",
   "main": "./src/main.ts",
   "publishConfig": {
-    "main": "./commonjs/main.js",
-    "module": "./module/main.js",
-    "browser": "./browser/main.js",
-    "types": "./types/main.d.ts"
+    "main": "./dist/main.cjs",
+    "browser": "./dist/main.mjs",
+    "types": "./dist/main.d.ts"
   },
   "files": [
-    "/commonjs/**/*",
-    "/module/**/*",
-    "/browser/**/*",
-    "/types/main.d.ts",
+    "/dist/**/*",
     "LICENSE"
   ],
   "engines": {

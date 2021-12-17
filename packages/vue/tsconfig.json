@@ -3,7 +3,7 @@
   "compilerOptions": {
     "jsx": "preserve",
     "rootDir": "./src",
-    "outDir": "./types",
+    "outDir": "./dist",
     "types": ["jest"]
   },
   "include": ["src/**/*"],
