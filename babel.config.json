@@ -32,5 +32,6 @@
     }
   },
   "comments": false,
-  "sourceMaps": "both"
+  "sourceMaps": "both",
+  "minified": true
 }
