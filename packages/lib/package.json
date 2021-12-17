@@ -1,6 +1,6 @@
 {
   "name": "@qr-image/lib",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "QR Code generator (png, svg, pdf, eps)",
   "homepage": "https://github.com/Mr-nUUb/qr-image",
   "keywords": [
