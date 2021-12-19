@@ -4,6 +4,8 @@ import ts from 'typescript'
 import { targets } from './targets'
 
 export function compile(pkg?: string) {
+  console.time('Overall')
+
   if (pkg === undefined) {
     console.error('No package given! Please specify a package to build!')
     return 1
@@ -47,7 +49,10 @@ export function compile(pkg?: string) {
   const messages = results.filter((d) => d.category !== ts.DiagnosticCategory.Message)
 
   // if nothing bad happened, return
-  if (messages.length === 0) return 0
+  if (messages.length === 0) {
+    console.timeEnd('Overall')
+    return 0
+  }
 
   // we srewed up, log errors and return non-zero exit code
   messages.forEach((message) => {
