@@ -1,11 +1,10 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "lib": ["es2020", "DOM"],
-    "module": "commonjs",
-    "target": "es2020",
-    "emitDeclarationOnly": true,
+    "moduleResolution": "Node",
     "esModuleInterop": true,
     "strict": true,
+    "skipLibCheck": true,
     "removeComments": true,
     "forceConsistentCasingInFileNames": true,
     "composite": true,
@@ -13,6 +12,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noUnusedLocals": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "."
   }
 }

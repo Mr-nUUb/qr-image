@@ -1,6 +1,6 @@
 {
   "name": "@qr-image/react",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "QR Code generator (react component)",
   "homepage": "https://github.com/Mr-nUUb/qr-image",
   "keywords": [
@@ -28,10 +28,10 @@
     "module": "./module/main.js"
   },
   "files": [
-    "/commonjs/**/*",
-    "/module/**/*",
-    "/browser/**/*",
-    "/types/**/*",
+    "/commonjs/**/*.{js,map}",
+    "/module/**/*.{js,map}",
+    "/browser/**/*.{js,map}",
+    "/types/**/*.d.ts",
     "LICENSE"
   ],
   "engines": {
@@ -45,8 +45,7 @@
     "jest-canvas-mock": "^2.3.1",
     "path2d-polyfill": "^1.2.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "typescript": "^4.5.2"
+    "react-dom": "^17.0.2"
   },
   "dependencies": {
     "@qr-image/lib": "workspace:^"

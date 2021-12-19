@@ -19,27 +19,11 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "build": "run build-types && run build-commonjs && run build-module && run build-browser",
-    "build-types": "yarn workspaces foreach --no-private -ptv run tsc",
-    "build-commonjs": "BABEL_ENV=development node scripts/build.js",
-    "build-module": "BABEL_ENV=module node scripts/build.js",
-    "build-browser": "BABEL_ENV=browser node scripts/build.js",
-    "clean": "run clean-types && run clean-commonjs && run clean-module && run clean-browser",
-    "clean-types": "rimraf 'packages/*/{types,tsconfig.tsbuildinfo}'",
-    "clean-commonjs": "rimraf 'packages/*/commonjs'",
-    "clean-module": "rimraf 'packages/*/module'",
-    "clean-browser": "rimraf 'packages/*/browser'",
-    "test": "jest --runInBand",
-    "publish": "run clean && run build && yarn workspaces foreach --no-private -ptv npm publish --access public && run clean"
+    "build": "node scripts/compile \"$0\"",
+    "clean": "rimraf \"$0\"/{browser,commonjs,module,types}",
+    "test": "jest --runInBand"
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/plugin-proposal-class-properties": "^7.16.0",
-    "@babel/plugin-proposal-optional-chaining": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
-    "@babel/preset-react": "^7.16.0",
-    "@babel/preset-typescript": "^7.16.0",
     "@babel/types": "^7.16.0",
     "@types/glob": "^7",
     "@types/jest": "^27.0.3",
