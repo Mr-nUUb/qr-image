@@ -11,7 +11,7 @@ if (!existsSync(outputPath)) mkdirSync(outputPath)
 // select output format and customize EC level, margin and size
 writeFileSync(
   resolve(outputPath, 'homepage.custom.png'),
-  getQRImage(homepage, { type: 'png', ecLevel: 'H', margin: 1, size: 9 }) as Buffer,
+  getQRImage(homepage, { type: 'png', ecLevel: 'H', margin: 1, size: 9 }) as Uint8Array,
 )
 
 // other supported formats

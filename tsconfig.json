@@ -12,6 +12,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noUnusedLocals": true,
+    "downlevelIteration": true,
     "jsx": "react",
     "baseUrl": "."
   }
