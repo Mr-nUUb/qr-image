@@ -1,4 +1,4 @@
-import { deflateSync } from 'zlib'
+import { deflate } from 'pako'
 import { crc32 } from './crc32'
 import { getQR } from './base'
 import { ImageOptions } from './types'
@@ -37,7 +37,7 @@ export function getPNG(text: string, options?: ImageOptions) {
   ihdr.writeUInt32BE(X, 12)
   ihdr.writeUInt32BE(crc32(ihdr.slice(4, -4)), 21)
 
-  const idat = Buffer.concat([PNG_IDAT, deflateSync(data, { level: 9 }), Buffer.alloc(4)])
+  const idat = Buffer.concat([PNG_IDAT, deflate(data, { level: 9 }), Buffer.alloc(4)])
   idat.writeUInt32BE(idat.length - 12, 0)
   idat.writeUInt32BE(crc32(idat.slice(4, -4)), idat.length - 4)
 

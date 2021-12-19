@@ -758,6 +758,8 @@ __metadata:
   dependencies:
     "@types/jest": ^27.0.3
     "@types/node": ^14
+    "@types/pako": ^1.0.2
+    pako: ^2.0.4
   languageName: unknown
   linkType: soft
 
@@ -1039,6 +1041,13 @@ __metadata:
   version: 14.18.0
   resolution: "@types/node@npm:14.18.0"
   checksum: b120c26fe5f30bc358e861db8d7e401e419d14bd9dd25c022f3c2ea8b0b429d4c9efd77ad5d6d2a8bde61702a6786fb74d409f1b2cbb61c79133e2a65aab4fb1
+  languageName: node
+  linkType: hard
+
+"@types/pako@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@types/pako@npm:1.0.2"
+  checksum: b94d5a82cfe339427549c3e22d77d9c651f15e49e00c7ec3dc274611ad6c8ed9f68231fb133c4c1733cd24506e51c101cd943991af68b429fdadb6d41357e830
   languageName: node
   linkType: hard
 
@@ -4582,6 +4591,13 @@ __metadata:
   version: 2.2.0
   resolution: "p-try@npm:2.2.0"
   checksum: f8a8e9a7693659383f06aec604ad5ead237c7a261c18048a6e1b5b85a5f8a067e469aa24f5bc009b991ea3b058a87f5065ef4176793a200d4917349881216cae
+  languageName: node
+  linkType: hard
+
+"pako@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "pako@npm:2.0.4"
+  checksum: 82b9b0b99dd830c9103856a6dbd10f0cb2c8c32b9768184727ea381a99666de9a47a069d2e6efe6acf09336f363956b50835c196ef9311b34b7274d420eb0d88
   languageName: node
   linkType: hard
 
