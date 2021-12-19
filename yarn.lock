@@ -1031,16 +1031,16 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 17.0.0
-  resolution: "@types/node@npm:17.0.0"
-  checksum: 30970a70c2eb78dbe80613d73243c255aaa9ce057d9e8595069ca0aef0363db0af45dc0d35f445cc804576a99df2970c170130663d76cd60319b779872e92ad6
+  version: 17.0.1
+  resolution: "@types/node@npm:17.0.1"
+  checksum: 16a5aa2778e1e49443d272f0da20af66c143337ddb14d9f36d5e7eb1e11ebbf195769d3d495ec5456ec94fe3d0e703c5df1ac279a05c7dc2a1220474467c1103
   languageName: node
   linkType: hard
 
 "@types/node@npm:^14":
-  version: 14.18.0
-  resolution: "@types/node@npm:14.18.0"
-  checksum: b120c26fe5f30bc358e861db8d7e401e419d14bd9dd25c022f3c2ea8b0b429d4c9efd77ad5d6d2a8bde61702a6786fb74d409f1b2cbb61c79133e2a65aab4fb1
+  version: 14.18.1
+  resolution: "@types/node@npm:14.18.1"
+  checksum: 4ad88c071792081a04069d7380aff855b8982bf3e064c7c9614c8dba69cafa0f50899950326429baa9ee7b2c5b4306ed7dca1411e209281aaea31809a40adbe4
   languageName: node
   linkType: hard
 
@@ -1799,9 +1799,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001286":
-  version: 1.0.30001286
-  resolution: "caniuse-lite@npm:1.0.30001286"
-  checksum: 04de4742552d4aeb713677b40693d9ac1fbd259573e0ff739565278bcecb6f398f3227546a4e930f4d5cf95b61458f4a53c9c1f90f5b0c4f6063b32e4c54b89e
+  version: 1.0.30001291
+  resolution: "caniuse-lite@npm:1.0.30001291"
+  checksum: ae24be79227036564ccd2ab8a0be8793a2e650941607a9f3e68a967db08d90cf17ded0382c2ce87063051b7200e618ec83bdb12f423ed60665922dc4d8eb8f78
   languageName: node
   linkType: hard
 
@@ -2178,9 +2178,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.17":
-  version: 1.4.19
-  resolution: "electron-to-chromium@npm:1.4.19"
-  checksum: a99d237839ecd65e93966f80039dd85d6a00a5a1dfa99b97546889773186b0e44ad8e81410e82faaaea13fb54375cc73ec343510317bc90941c2ffff051b3ab7
+  version: 1.4.24
+  resolution: "electron-to-chromium@npm:1.4.24"
+  checksum: 71c065ae9cb74bc7e44abeea20c1639a2057bee4927f09ccc2a6d492fa5c7a31da63ad5d5d8659f7d04db680225543aae54579793f269c9d2ecc1c1541018688
   languageName: node
   linkType: hard
 
@@ -2459,8 +2459,8 @@ __metadata:
   linkType: hard
 
 "eslint@npm:^8.3.0":
-  version: 8.4.1
-  resolution: "eslint@npm:8.4.1"
+  version: 8.5.0
+  resolution: "eslint@npm:8.5.0"
   dependencies:
     "@eslint/eslintrc": ^1.0.5
     "@humanwhocodes/config-array": ^0.9.2
@@ -2502,7 +2502,7 @@ __metadata:
     v8-compile-cache: ^2.0.3
   bin:
     eslint: bin/eslint.js
-  checksum: d962cd7cd0f68ddc2412f47154b8992ad3af987cf47fa6e60e51a2b7d32a91f934388f7d29e2c45b16b7ac69f0d220d0a483189ec6ba43a8a480110c34f158f9
+  checksum: c1a9e26070520a308cc30b62ba0d37d5b115ed23987a93219819537bdea9398e6ebe57c27d97be36ecc83b5162c72e82ecb0a9e5b44b7992980f9be90eb5c4b3
   languageName: node
   linkType: hard
 
@@ -3058,9 +3058,9 @@ __metadata:
   linkType: hard
 
 "ignore@npm:^5.1.4, ignore@npm:^5.1.8":
-  version: 5.1.9
-  resolution: "ignore@npm:5.1.9"
-  checksum: 6f6b2235f4e63648116c5814f76b2d3d63fae9c21b8a466862e865732f59e787c9938a9042f9457091db6f0d811508ea3c8c6a60f35bafc4ceea08bbe8f96fd5
+  version: 5.2.0
+  resolution: "ignore@npm:5.2.0"
+  checksum: 6b1f926792d614f64c6c83da3a1f9c83f6196c2839aa41e1e32dd7b8d174cef2e329d75caabb62cb61ce9dc432f75e67d07d122a037312db7caa73166a1bdb77
   languageName: node
   linkType: hard
 
@@ -4453,9 +4453,9 @@ __metadata:
   linkType: hard
 
 "object-inspect@npm:^1.11.0, object-inspect@npm:^1.9.0":
-  version: 1.11.1
-  resolution: "object-inspect@npm:1.11.1"
-  checksum: 98bc8e1e108b193cfb5d9bfb71b79f0e19d187aca4f9a3f28ea0e946c0011a74f9fc2ada83ecf2216b3e69fe6bf697fda8230ed84a6ca5680887e7bb73cf34ad
+  version: 1.12.0
+  resolution: "object-inspect@npm:1.12.0"
+  checksum: 2b36d4001a9c921c6b342e2965734519c9c58c355822243c3207fbf0aac271f8d44d30d2d570d450b2cc6f0f00b72bcdba515c37827d2560e5f22b1899a31cf4
   languageName: node
   linkType: hard
 
@@ -5430,8 +5430,8 @@ __metadata:
   linkType: hard
 
 "ts-jest@npm:^27.1.1":
-  version: 27.1.1
-  resolution: "ts-jest@npm:27.1.1"
+  version: 27.1.2
+  resolution: "ts-jest@npm:27.1.2"
   dependencies:
     bs-logger: 0.x
     fast-json-stable-stringify: 2.x
@@ -5459,7 +5459,7 @@ __metadata:
       optional: true
   bin:
     ts-jest: cli.js
-  checksum: 3aea68083399c49e9079dbd1583ee5cce7da9648a6cdaef96c2b5f2f85de375c186227724336f359ecd2bc7871bff0911667d1f4867e0e275417b3e4887841d9
+  checksum: 2e7275f8a3545ec1340b37c458ace9244b5903e86861eb108beffff97d433f296c1254f76a41b573b1fe6245110b21bb62150bb88d55159f1dc7a929886535cb
   languageName: node
   linkType: hard
 
