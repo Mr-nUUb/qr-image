@@ -1,8 +1,6 @@
-'use strict'
-
-const { EOL } = require('os')
-const { dirname, resolve } = require('path')
-const ts = require('typescript')
+import { EOL } from 'os'
+import { dirname, resolve } from 'path'
+import ts from 'typescript'
 
 // key = outDir
 const targets = {
@@ -12,8 +10,13 @@ const targets = {
   types: '../tsconfig.types.json',
 }
 
-function compile(pkg) {
-  const results = []
+export function compile(pkg?: string) {
+  if (pkg === undefined) {
+    console.error('No package given! Please specify a package to build!')
+    return 1
+  }
+
+  const results: ts.Diagnostic[] = []
 
   // build for all targets
   for (const [key, value] of Object.entries(targets)) {
@@ -52,10 +55,10 @@ function compile(pkg) {
   const messages = results.filter((d) => d.category !== ts.DiagnosticCategory.Message)
 
   // if nothing bad happened, return
-  if (messages === 0) return 0
+  if (messages.length === 0) return 0
 
   // we srewed up, log errors and return non-zero exit code
-  for (const message in messages)
+  messages.forEach((message) => {
     console.error(
       ts.formatDiagnostic(message, {
         getCurrentDirectory: () => dirname(__dirname),
@@ -63,8 +66,8 @@ function compile(pkg) {
         getNewLine: () => EOL,
       }),
     )
+  })
   return 1
 }
-exports.compile = compile
 
-if (process.mainModule === module) process.exitCode = compile(...process.argv.slice(2))
+if (require.main === module) process.exitCode = compile(...process.argv.slice(2))
