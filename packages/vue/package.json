@@ -1,6 +1,6 @@
 {
   "name": "@qr-image/vue",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "QR Code generator (vue component)",
   "homepage": "https://github.com/Mr-nUUb/qr-image",
   "keywords": [
@@ -20,15 +20,18 @@
     "url": "ssh://git@github.com/Mr-nUUb/qr-image.git"
   },
   "bugs": "https://github.com/Mr-nUUb/qr-image/issues",
-  "type": "module",
   "main": "./src/main.ts",
   "publishConfig": {
-    "main": "./dist/main.cjs",
-    "browser": "./dist/main.mjs",
-    "types": "./dist/main.d.ts"
+    "types": "./types/main.d.ts",
+    "main": "./commonjs/main.js",
+    "browser": "./browser/main.js",
+    "module": "./module/main.js"
   },
   "files": [
-    "/dist/**/*",
+    "/commonjs/**/*",
+    "/module/**/*",
+    "/browser/**/*",
+    "/types/**/*",
     "LICENSE"
   ],
   "engines": {
