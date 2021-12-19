@@ -1,6 +1,6 @@
 {
   "name": "@qr-image/lib",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "QR Code generator (png, svg, pdf, eps)",
   "homepage": "https://github.com/Mr-nUUb/qr-image",
   "keywords": [
@@ -29,7 +29,45 @@
     "types": "./types/main.d.ts",
     "main": "./commonjs/main.js",
     "browser": "./browser/main.js",
-    "module": "./module/main.js"
+    "module": "./module/main.js",
+    "exports": {
+      ".": {
+        "types": "./types/main.d.ts",
+        "main": "./commonjs/main.js",
+        "browser": "./browser/main.js",
+        "module": "./module/main.js"
+      },
+      "./json": {
+        "types": "./types/base.d.ts",
+        "main": "./commonjs/base.js",
+        "browser": "./browser/base.js",
+        "module": "./module/base.js"
+      },
+      "./png": {
+        "types": "./types/png.d.ts",
+        "main": "./commonjs/png.js",
+        "browser": "./browser/png.js",
+        "module": "./module/png.js"
+      },
+      "./svg": {
+        "types": "./types/svg.d.ts",
+        "main": "./commonjs/svg.js",
+        "browser": "./browser/svg.js",
+        "module": "./module/svg.js"
+      },
+      "./eps": {
+        "types": "./types/eps.d.ts",
+        "main": "./commonjs/eps.js",
+        "browser": "./browser/eps.js",
+        "module": "./module/eps.js"
+      },
+      "./pdf": {
+        "types": "./types/pdf.d.ts",
+        "main": "./commonjs/pdf.js",
+        "browser": "./browser/pdf.js",
+        "module": "./module/pdf.js"
+      }
+    }
   },
   "files": [
     "/commonjs/**/*.{js,map}",
