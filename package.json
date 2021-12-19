@@ -20,7 +20,7 @@
   },
   "scripts": {
     "build": "ts-node scripts/compile.ts \"$0\"",
-    "clean": "rimraf \"$0\"/{browser,commonjs,module,types}",
+    "clean": "ts-node scripts/clean.ts \"$0\"",
     "test": "jest --runInBand"
   },
   "devDependencies": {
@@ -28,6 +28,7 @@
     "@types/glob": "^7",
     "@types/jest": "^27.0.3",
     "@types/node": "^14",
+    "@types/rimraf": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vue/compiler-dom": "^3.2.24",

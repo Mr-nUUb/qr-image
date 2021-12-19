@@ -1,14 +1,7 @@
 import { EOL } from 'os'
 import { dirname, resolve } from 'path'
 import ts from 'typescript'
-
-// key = outDir
-const targets = {
-  commonjs: '../tsconfig.cjs.json',
-  module: '../tsconfig.mjs.json',
-  browser: '../tsconfig.web.json',
-  types: '../tsconfig.types.json',
-}
+import { targets } from './targets'
 
 export function compile(pkg?: string) {
   if (pkg === undefined) {
@@ -21,7 +14,6 @@ export function compile(pkg?: string) {
   // build for all targets
   for (const [key, value] of Object.entries(targets)) {
     const current = `Compile ${pkg}, ${key}`
-
     console.time(current)
 
     // parse config
